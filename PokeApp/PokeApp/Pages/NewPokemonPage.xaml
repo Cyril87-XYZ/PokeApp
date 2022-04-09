@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PokeApp.NewPokemonPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <StackLayout>
+        <Frame>
+            <Image HeightRequest="100" 
+                   Source="PokeNew.jpg" />
+        </Frame>
+        <ScrollView Margin="20">
+            <StackLayout Spacing="30">
+
+                <StackLayout>
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        HorizontalTextAlignment="Center"
+                        Text=" Image :" />
+
+                    <Frame
+                        BorderColor="Black"
+                        CornerRadius="20"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand">
+                        <ImageButton
+                            x:Name="TakePictureButton"
+                            Clicked="OnTakePicture"
+                            HeightRequest="50"
+                            Source="poke2.png"
+                            WidthRequest="50" />
+                    </Frame>
+                </StackLayout>
+
+                <Image
+                    x:Name="imagePoke"
+                    HeightRequest="250"
+                    WidthRequest="250" />
+
+                <StackLayout>
+                    <Label
+                        Padding="0"
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        Text=" Nom du pokémon : " />
+                    <Entry
+                        x:Name="nomPoke"
+                        BackgroundColor="Transparent"
+                        ClearButtonVisibility="WhileEditing"
+                        MaxLength="12"
+                        TextColor="Black"
+                        />
+                </StackLayout>
+                
+                <StackLayout>
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        Text=" Description : " />
+                    <Editor
+                        x:Name="description"
+                        AutoSize="TextChanges"
+                        BackgroundColor="Transparent"
+                        MaxLength="350"
+                        Text=" "
+                        TextColor="Black" />
+                </StackLayout>
+
+                <StackLayout>
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        Text=" Entrer la taille (m) : " />
+                    <Entry
+                        x:Name="taille"
+                        BackgroundColor="Transparent"
+                        ClearButtonVisibility="WhileEditing"
+                        Keyboard="Numeric"
+                        MaxLength="5"
+                        Text=" "
+                        TextColor="Black" />
+                </StackLayout>
+
+                <StackLayout>
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        Text=" Entrer le poids (kg) : " />
+                    <Entry
+                        x:Name="poids"
+                        BackgroundColor="Transparent"
+                        ClearButtonVisibility="WhileEditing"
+                        Keyboard="Numeric"
+                        MaxLength="5"
+                        Text=" "
+                        TextColor="Black" />
+                </StackLayout>
+
+                <StackLayout>
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        HorizontalTextAlignment="Center"
+                        Text=" Image shiny :" />
+                    <Frame
+                        BorderColor="Black"
+                        CornerRadius="20"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand">
+                        <ImageButton
+                            x:Name="TakePictureButton2"
+                            Clicked="OnTakePictureShiny"
+                            HeightRequest="50"
+                            Source="poke2.png"
+                            WidthRequest="50" />
+                    </Frame>
+                </StackLayout>
+
+                <Image
+                    x:Name="imagePokeShiny"
+                    HeightRequest="250"
+                    WidthRequest="250" />
+
+                <StackLayout>
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        Text=" Type 1 : " />
+                    <Picker
+                        x:Name="pickerType"
+                        Title="Sélectionner un Type : "
+                        TitleColor="Orange">
+                        <Picker.Items>
+                            <x:String>🏔 Roche</x:String>
+                            <x:String>👻 Spectre</x:String>
+                            <x:String>⛓ Acier</x:String>
+                            <x:String>💧 Eau</x:String>
+                            <x:String>🍀 Plante</x:String>
+                            <x:String>🧠 Psy</x:String>
+                            <x:String>❄️ Glace</x:String>
+                            <x:String>🌘 Tenebre</x:String>
+                            <x:String>✨ Fée</x:String>
+                            <x:String>👀 Normal</x:String>
+                            <x:String>💣 Combat</x:String>
+                            <x:String>🕊 Vol</x:String>
+                            <x:String>💀 Poison</x:String>
+                            <x:String>🏝 Sol</x:String>
+                            <x:String>🦟 Insecte</x:String>
+                            <x:String>🔥 Feu</x:String>
+                            <x:String>⚡️ Electrik</x:String>
+                            <x:String>🐲 Dragon</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </StackLayout>
+
+                <StackLayout>
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        Text=" Type 2 (facultatif) : " />
+                    <Picker
+                        x:Name="pickerType2"
+                        Title="Sélectionner un Type : "
+                        TitleColor="Orange">
+                        <Picker.Items>
+                            <x:String>🏔 Roche</x:String>
+                            <x:String>👻 Spectre</x:String>
+                            <x:String>⛓ Acier</x:String>
+                            <x:String>💧 Eau</x:String>
+                            <x:String>🍀 Plante</x:String>
+                            <x:String>🧠 Psy</x:String>
+                            <x:String>❄️ Glace</x:String>
+                            <x:String>🌘 Tenebre</x:String>
+                            <x:String>✨ Fée</x:String>
+                            <x:String>👀 Normal</x:String>
+                            <x:String>💣 Combat</x:String>
+                            <x:String>🕊 Vol</x:String>
+                            <x:String>💀 Poison</x:String>
+                            <x:String>🏝 Sol</x:String>
+                            <x:String>🦟 Insecte</x:String>
+                            <x:String>🔥 Feu</x:String>
+                            <x:String>⚡️ Electrik</x:String>
+                            <x:String>🐲 Dragon</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </StackLayout>
+
+                <StackLayout>
+                    <StackLayout HorizontalOptions="CenterAndExpand" 
+                                 Orientation="Horizontal">
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            Text=" 💚 Hp =" />
+                        <Label
+                            x:Name="LabelHp"
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            TextColor="Gray" />
+                    </StackLayout>
+                    <Slider
+                        x:Name="SlideHp"
+                        Maximum="255"
+                        MaximumTrackColor="Gray"
+                        Minimum="0"
+                        MinimumTrackColor="red"
+                        ThumbColor="black"
+                        ThumbImageSource="poke1.png"
+                        ValueChanged="Slide_ValueChanged" />
+                </StackLayout>
+
+                <StackLayout>
+                    <StackLayout HorizontalOptions="CenterAndExpand" 
+                                 Orientation="Horizontal">
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            Text="⚔️ Attaque =" />
+                        <Label
+                            x:Name="LabelAttaque"
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            TextColor="Gray" />
+                    </StackLayout>
+                    <Slider
+                        x:Name="SlideAttaque"
+                        Maximum="255"
+                        MaximumTrackColor="Gray"
+                        Minimum="0"
+                        MinimumTrackColor="red"
+                        ThumbColor="black"
+                        ThumbImageSource="poke1.png"
+                        ValueChanged="Slide_ValueChanged" />
+                </StackLayout>
+
+                <StackLayout>
+                    <StackLayout HorizontalOptions="CenterAndExpand" 
+                                 Orientation="Horizontal">
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            Text="🔰 Défense =" />
+                        <Label
+                            x:Name="LabelDefense"
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            TextColor="Gray" />
+                    </StackLayout>
+                    <Slider
+                        x:Name="SlideDefense"
+                        Maximum="255"
+                        MaximumTrackColor="Gray"
+                        Minimum="0"
+                        MinimumTrackColor="red"
+                        ThumbColor="black"
+                        ThumbImageSource="poke1.png"
+                        ValueChanged="Slide_ValueChanged" />
+                </StackLayout>
+
+                <StackLayout>
+                    <StackLayout HorizontalOptions="CenterAndExpand" 
+                                 Orientation="Horizontal">
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            Text="🧨💥 Attaque Spéciale =" />
+                        <Label
+                            x:Name="LabelAttaqueSpe"
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            TextColor="Gray" />
+                    </StackLayout>
+                    <Slider
+                        x:Name="SlideAttaqueSpe"
+                        Maximum="255"
+                        MaximumTrackColor="Gray"
+                        Minimum="0"
+                        MinimumTrackColor="red"
+                        ThumbColor="black"
+                        ThumbImageSource="poke1.png"
+                        ValueChanged="Slide_ValueChanged" />
+                </StackLayout>
+
+                <StackLayout>
+                    <StackLayout HorizontalOptions="CenterAndExpand" 
+                                 Orientation="Horizontal">
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            Text="🛡🗡Défense Spéciale =" />
+                        <Label
+                            x:Name="LabelDefenseSpe"
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            TextColor="Gray" />
+                    </StackLayout>
+                    <Slider
+                        x:Name="SlideDefenseSpe"
+                        Maximum="255"
+                        MaximumTrackColor="Gray"
+                        Minimum="0"
+                        MinimumTrackColor="red"
+                        ThumbColor="black"
+                        ThumbImageSource="poke1.png"
+                        ValueChanged="Slide_ValueChanged" />
+                </StackLayout>
+
+                <StackLayout>
+                    <StackLayout HorizontalOptions="CenterAndExpand" 
+                                 Orientation="Horizontal">
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            Text="🌪 Vitesse =" />
+                        <Label
+                            x:Name="LabelVitesse"
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            TextColor="Gray" />
+                    </StackLayout>
+                    <Slider
+                        x:Name="SlideVitesse"
+                        Maximum="255"
+                        MaximumTrackColor="Gray"
+                        Minimum="0"
+                        MinimumTrackColor="red"
+                        ThumbColor="black"
+                        ThumbImageSource="poke1.png"
+                        ValueChanged="Slide_ValueChanged" />
+                </StackLayout>
+                <StackLayout>
+                    <Button
+                        x:Name="getButton"
+                        Clicked="OnNewButtonClicked"
+                        Text=" 😀 Ajouter votre pokémon 😀" />
+                    <Label x:Name="statusMessage" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>
